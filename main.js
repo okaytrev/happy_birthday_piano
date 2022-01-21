@@ -18,6 +18,8 @@ keyReturn = (event) => {
 function key_press(note) {
   note.addEventListener('mousedown',keyPlay);
   note.addEventListener('mouseup',keyReturn);
+  note.addEventListener('touchstart',keyPlay);
+  note.addEventListener('touchend',keyReturn);
 }
 
 
