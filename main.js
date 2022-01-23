@@ -5,6 +5,8 @@ keys.forEach(function(key){
   notes.push(document.getElementById(key));
 })
 
+var key_g = document.getElementById('audio');
+
 // Write named functions that change the color of the keys below
 keyPlay = (event) => {
   event.target.style.backgroundColor = 'green';
@@ -14,12 +16,17 @@ keyReturn = (event) => {
   event.target.style.backgroundColor = '';
 }
 
+audioPlay = () => {
+  key_g.play();
+}
+
 // Write a named function with event handler properties
 function key_press(note) {
   note.addEventListener('mousedown',keyPlay);
   note.addEventListener('mouseup',keyReturn);
   note.addEventListener('touchstart',keyPlay);
   note.addEventListener('touchend',keyReturn);
+  note.addEventListener('click',audioPlay)
 }
 
 
